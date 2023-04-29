@@ -22,7 +22,6 @@ class User extends Authenticatable
         'slug',
         'contact',
         'address',
-        'description',
         'email',
         'password',
     ];
