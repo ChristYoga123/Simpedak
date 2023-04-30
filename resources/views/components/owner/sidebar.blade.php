@@ -6,7 +6,7 @@
     <div class="side-nav__devider my-6"></div>
     <ul>
         <li>
-            <a href="#" class="side-menu">
+            <a href="#" class="side-menu side-menu--active">
                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                 <div class="side-menu__title"> Dashboard </div>
             </a>

@@ -37,12 +37,17 @@ Route::middleware('auth')->prefix("admin")->group(function () {
 
 /* Owner Route */
 // Non Auth
-Route::prefix("owner")->group(function () {
+Route::prefix("owner")->middleware("guest_owner")->group(function () {
+    // Login
     Route::get("login", [LoginController::class, "index"])->name("owner.login.index");
+    Route::post("login", [LoginController::class, "login"])->name("owner.login");
 });
 
 // Auth
-Route::prefix("owner")->group(function () {
+Route::prefix("owner")->middleware("auth_owner")->group(function () {
+    // Login
+    Route::post("logout", [LoginController::class, "logout"])->name("owner.logout");
+    // Dashboard
     Route::get("dashboard", [DashboardController::class, "index"])->name("owner.dashboard.index");
 });
 

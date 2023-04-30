@@ -51,7 +51,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             Masuk sebagai Owner
                         </h2>
                         <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">Beberapa klik lagi untuk masuk ke akun Anda</div>
-                        <form action="" method="post">
+                        <form action="{{ route("owner.login") }}" method="post">
                             @csrf
                             <div class="intro-x mt-8">
                                 <input type="email" class="intro-x login__input input input--lg border border-gray-300 block @error("email")
