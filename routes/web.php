@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Owner\Auth\LoginController;
+use App\Http\Controllers\Owner\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,11 @@ Route::middleware('auth')->prefix("admin")->group(function () {
 // Non Auth
 Route::prefix("owner")->group(function () {
     Route::get("login", [LoginController::class, "index"])->name("owner.login.index");
+});
+
+// Auth
+Route::prefix("owner")->group(function () {
+    Route::get("dashboard", [DashboardController::class, "index"])->name("owner.dashboard.index");
 });
 
 
