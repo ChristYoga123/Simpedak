@@ -30,4 +30,9 @@ class ProductOwner extends Model
     {
         return $this->hasOne(ProductPrice::class);
     }
+
+    public function Recipes()
+    {
+        return $this->hasMany(Recipe::class);
+    }
 }
