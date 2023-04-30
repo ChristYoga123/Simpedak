@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("product_owner_id");
+            $table->foreignId("product_owner_id")->constrained();
             $table->unsignedBigInteger("raw_product_id");
             $table->foreign("raw_product_id")->references("id")->on("products")->onDelete("cascade");
             $table->integer("quantity");
