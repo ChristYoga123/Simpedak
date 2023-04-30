@@ -35,4 +35,9 @@ class ProductOwner extends Model
     {
         return $this->hasMany(Recipe::class);
     }
+
+    public function TransactionDetails()
+    {
+        return $this->hasMany(TransactionDetail::class);
+    }
 }
