@@ -20,4 +20,9 @@ class ProductOwner extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function ProductTypes()
+    {
+        return $this->hasMany(ProductType::class);
+    }
 }
