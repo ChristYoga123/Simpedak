@@ -25,4 +25,9 @@ class ProductOwner extends Model
     {
         return $this->hasMany(ProductType::class);
     }
+
+    public function ProductPrice()
+    {
+        return $this->hasOne(ProductPrice::class);
+    }
 }
