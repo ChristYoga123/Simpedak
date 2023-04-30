@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Owner\Auth\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,5 +33,12 @@ Route::middleware('auth')->prefix("admin")->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+/* Owner Route */
+// Non Auth
+Route::prefix("owner")->group(function () {
+    Route::get("login", [LoginController::class, "index"])->name("owner.login.index");
+});
+
 
 require __DIR__ . '/auth.php';
