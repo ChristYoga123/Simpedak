@@ -6,19 +6,19 @@
     <div class="side-nav__devider my-6"></div>
     <ul>
         <li>
-            <a href="#" class="side-menu side-menu--active">
+            <a href="#" class="side-menu {{ Route::is("owner.dashboard.index") ? "side-menu--active" : "" }}">
                 <div class="side-menu__icon"> <i data-feather="home"></i> </div>
                 <div class="side-menu__title"> Dashboard </div>
             </a>
         </li>
         <li>
-            <a href="javascript:;" class="side-menu">
+            <a href="javascript:;" class="side-menu {{ Route::is("owner.product.*") ? "side-menu--active" : "" }}">
                 <div class="side-menu__icon"> <i data-feather="box"></i> </div>
                 <div class="side-menu__title"> Produk <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
             </a>
             <ul class="">
                 <li>
-                    <a href="#" class="side-menu">
+                    <a href="{{ route("owner.product.raw-product.index") }}" class="side-menu {{ Route::is("owner.product.raw-product.*") ? "side-menu--active" : "" }}">
                         <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                         <div class="side-menu__title"> Bahan Baku </div>
                     </a>

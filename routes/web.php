@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Owner\Auth\LoginController;
 use App\Http\Controllers\Owner\DashboardController;
+use App\Http\Controllers\Owner\RawProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +50,13 @@ Route::prefix("owner")->middleware("auth_owner")->group(function () {
     Route::post("logout", [LoginController::class, "logout"])->name("owner.logout");
     // Dashboard
     Route::get("dashboard", [DashboardController::class, "index"])->name("owner.dashboard.index");
+    // Raw Product
+    Route::get("produk/bahan-baku", [RawProductController::class, "index"])->name("owner.product.raw-product.index");
+    Route::post("produk/bahan-baku", [RawProductController::class, "store"])->name("owner.product.raw-product.store");
+    Route::get("produk/bahan-baku/{productOwner}/edit", [RawProductController::class, "show"])->name("owner.product.raw-product.show");
+    Route::put("produk/bahan-baku/{productOwner}/update", [RawProductController::class, "update"])->name("owner.product.raw-product.update");
+    Route::put("produk/bahan-baku/kuantitas/{productOwner}/update", [RawProductController::class, "updateQuantity"])->name("owner.product.raw-product.updateQuantity");
+    Route::get("produk/bahan-baku/riwayat/{slug}", [RawProductController::class, "index_history"])->name("owner.product.raw-product.history");
 });
 
 
