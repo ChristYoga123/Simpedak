@@ -210,7 +210,7 @@
         function editRawProductData(id)
         {
             $.ajax({
-                url: `{{ url("owner/produk/bahan-baku") }}/${id}/edit`,
+                url: `{{ url("owner/produk/bahan-baku") }}/${id}/show`,
                 method: 'GET',
                 dataType: 'json',
                 beforeSend: function()
@@ -249,7 +249,7 @@
         function editRawProductQuantity(id)
         {
             $.ajax({
-                url: `{{ url("owner/produk/bahan-baku") }}/${id}/edit`,
+                url: `{{ url("owner/produk/bahan-baku") }}/${id}/show`,
                 method: 'GET',
                 dataType: 'json',
                 beforeSend: function()

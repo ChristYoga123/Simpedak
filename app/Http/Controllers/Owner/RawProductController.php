@@ -182,8 +182,6 @@ class RawProductController extends Controller
     // decomposite if
     private function alreadyHasRawProduct($product_id)
     {
-        return ProductOwner::whereProductId($product_id)->whereUserId(Auth::user()->id)->whereHas("ProductType", function ($query) {
-            $query->whereType("Bahan Baku");
-        })->exists();
+        return ProductOwner::whereProductId($product_id)->whereUserId(Auth::user()->id)->exists();
     }
 }

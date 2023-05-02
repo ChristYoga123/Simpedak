@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId("product_owner_id")->constrained();
             $table->unsignedBigInteger("raw_product_id");
-            $table->foreign("raw_product_id")->references("id")->on("products")->onDelete("cascade");
-            $table->integer("quantity");
+            $table->foreign("raw_product_id")->references("id")->on("product_owners")->onDelete("cascade");
+            $table->float("quantity");
             $table->timestamps();
         });
     }
