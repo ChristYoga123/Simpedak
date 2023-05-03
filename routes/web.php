@@ -4,6 +4,7 @@ use App\Http\Controllers\Owner\Auth\LoginController;
 use App\Http\Controllers\Owner\DashboardController;
 use App\Http\Controllers\Owner\RawProductController;
 use App\Http\Controllers\Owner\ServeProductController;
+use App\Http\Controllers\Owner\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +65,11 @@ Route::prefix("owner")->middleware("auth_owner")->group(function () {
     Route::post("produk/produk-jadi", [ServeProductController::class, "store"])->name("owner.product.serve-product.store");
     Route::put("produk/produk-jadi/{productOwner}/update", [ServeProductController::class, "update"])->name("owner.product.serve-product.update");
     Route::put("produk/produk-jadi/kuantitas/{productOwner}/update", [ServeProductController::class, "updateQuantity"])->name("owner.product.serve-product.updateQuantity");
+    // Transaction
+    Route::get("transaksi", [TransactionController::class, "index"])->name("owner.transaction.index");
+    Route::get("transaksi/{transaction}/show", [TransactionController::class, "show"])->name("owner.transaction.show");
+    Route::post("transaksi", [TransactionController::class, "store"])->name("owner.transaction.store");
+    Route::put("transaksi/{transaction}/update", [TransactionController::class, "update"])->name("owner.transaction.update");
 });
 
 

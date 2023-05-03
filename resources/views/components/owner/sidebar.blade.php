@@ -32,7 +32,7 @@
             </ul>
         </li>
         <li>
-            <a href="side-menu-inbox.html" class="side-menu">
+            <a href="{{ route("owner.transaction.index") }}" class="side-menu {{ Route::is("owner.transaction.*") ? "side-menu--active" : "" }}">
                 <div class="side-menu__icon"> <i data-feather="inbox"></i> </div>
                 <div class="side-menu__title"> Transaksi </div>
             </a>
