@@ -70,6 +70,10 @@ Route::prefix("owner")->middleware("auth_owner")->group(function () {
     Route::get("transaksi/{transaction}/show", [TransactionController::class, "show"])->name("owner.transaction.show");
     Route::post("transaksi", [TransactionController::class, "store"])->name("owner.transaction.store");
     Route::put("transaksi/{transaction}/update", [TransactionController::class, "update"])->name("owner.transaction.update");
+    // Integration
+    Route::get("interaksi/chat", function () {
+        return view("pages.owner.integration.chat");
+    })->name("owner.integration.chat.index");
 });
 
 

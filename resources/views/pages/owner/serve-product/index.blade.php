@@ -200,7 +200,7 @@
             // error alert
             Swal.fire(
                 "Gagal",
-                `{{ session("error") }}`,
+                `Data tidak valid`,
                 "error"
             );
         </script>
@@ -209,13 +209,7 @@
             // erro alert
             Swal.fire(
                 "Gagal",
-                `
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-                `,
+                `Data tidak valid`,
                 "error"
             );
         </script>
