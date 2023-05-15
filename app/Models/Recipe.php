@@ -18,6 +18,6 @@ class Recipe extends Model
 
     public function RawProduct()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(ProductOwner::class);
     }
 }
