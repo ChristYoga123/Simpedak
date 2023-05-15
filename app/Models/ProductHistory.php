@@ -5,16 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TransactionDetail extends Model
+class ProductHistory extends Model
 {
     use HasFactory;
 
     protected $guarded = ["id"];
-
-    public function Transaction()
-    {
-        return $this->belongsTo(Transaction::class);
-    }
 
     public function ProductOwner()
     {

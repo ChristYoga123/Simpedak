@@ -28,6 +28,11 @@ class ProductOwner extends Model implements HasMedia
         return $this->hasOne(ProductType::class);
     }
 
+    public function ProductHistories()
+    {
+        return $this->hasMany(ProductHistory::class);
+    }
+
     public function ProductPrice()
     {
         return $this->hasOne(ProductPrice::class);

@@ -24,6 +24,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link rel="stylesheet" href="{{ asset("assets/select2/dist/css/select2.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/select2/dist/js/select2.min.js") }}">
         <!-- END: CSS Assets-->
+        @livewireStyles
     </head>
     <!-- END: Head -->
     <body class="app">
@@ -54,6 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- END: Content -->
         </div>
         <!-- BEGIN: JS Assets-->
+        @livewireScripts
         @stack('script')
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=["your-google-map-api"]&libraries=places"></script>

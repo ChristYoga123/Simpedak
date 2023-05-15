@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recipes', function (Blueprint $table) {
+        Schema::create('product_histories', function (Blueprint $table) {
             $table->id();
             $table->foreignId("product_owner_id")->constrained();
-            $table->unsignedBigInteger("raw_product_id");
-            $table->foreign("raw_product_id")->references("id")->on("product_owners")->onDelete("cascade");
-            $table->float("quantity");
+            $table->integer("quantity");
+            $table->enum("type", ["Penambahan", "Pengurangan"]);
+            $table->longText("history");
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recipes');
+        Schema::dropIfExists('product_histories');
     }
 };
