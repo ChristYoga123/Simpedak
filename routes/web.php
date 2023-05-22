@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Owner\Auth\LoginController;
+use App\Http\Controllers\Owner\CooperateController;
 use App\Http\Controllers\Owner\DashboardController;
 use App\Http\Controllers\Owner\RawProductController;
 use App\Http\Controllers\Owner\ServeProductController;
@@ -71,9 +72,9 @@ Route::prefix("owner")->middleware("auth_owner")->group(function () {
     Route::post("transaksi", [TransactionController::class, "store"])->name("owner.transaction.store");
     Route::put("transaksi/{transaction}/update", [TransactionController::class, "update"])->name("owner.transaction.update");
     // Integration
-    Route::get("interaksi/chat", function () {
-        return view("pages.owner.integration.chat");
-    })->name("owner.integration.chat.index");
+    Route::get("integrasi", [CooperateController::class, "index"])->name("owner.integration.index");
+    Route::get("integrasi/supplier/{user}", [CooperateController::class, "showSupplier"])->name("owner.integration.showSupplier");
+    Route::post("integrasi/{supplier_id}", [CooperateController::class, "store"])->name("owner.integration.store");
 });
 
 
