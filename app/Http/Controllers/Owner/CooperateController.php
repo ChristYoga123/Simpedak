@@ -29,11 +29,19 @@ class CooperateController extends Controller
 
         DB::beginTransaction();
         try {
-            Cooperate::create([
-                "owner_id" => Auth::user()->id,
-                "supplier_id" => $supplier_id,
-                "meet_schedule" => $request->meet_schedule
-            ]);
+            $cooperate = Cooperate::whereOwnerId(Auth::user()->id)->whereSupplierId($supplier_id)->first();
+            if ($cooperate) {
+                $cooperate->update([
+                    "meet_schedule" => $request->meet_schedule,
+                    "schedule_accepted" => "Menunggu"
+                ]);
+            } else {
+                Cooperate::create([
+                    "owner_id" => Auth::user()->id,
+                    "supplier_id" => $supplier_id,
+                    "meet_schedule" => $request->meet_schedule
+                ]);
+            }
             DB::commit();
             return redirect()->back()->with("success", "Data berhasil disimpan");
         } catch (Exception $e) {

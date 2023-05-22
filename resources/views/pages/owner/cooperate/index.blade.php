@@ -27,7 +27,7 @@
                         <label>Waktu</label>
                         <input type="datetime-local" class="input border block w-full" name="meet_schedule">
                     </div>
-                    <div class="mt-3">
+                    <div class="status mt-3">
                         <label>Status</label>
                         <p class="schedule_accepted text-yellow-700"><strong>Belum mengajukan perjanjian</strong></p>
                     </div>
@@ -184,17 +184,22 @@
                     }
                     else{
                         $(".loading").removeClass("flex").addClass("hidden");
-                        $("#jadwal-modal form").addClass("hidden");
-                        $("#jadwal-modal #schedule").removeClass("hidden");
-                        $("#jadwal-modal #schedule p.meet_schedule").html(data.meet_schedule);
                         if(data.schedule_accepted == "Menunggu")
                         {
+                            $("#jadwal-modal form").addClass("hidden");
+                            $("#jadwal-modal #schedule").removeClass("hidden");
+                            $("#jadwal-modal #schedule p.meet_schedule").html(data.meet_schedule);
                             $("#jadwal-modal #schedule p.schedule_accepted").addClass("text-yellow-700").html(`<strong>${data.schedule_accepted}</strong>`);
                         } else if(data.schedule_accepted == "Disetujui")
                         {
+                            $("#jadwal-modal form").addClass("hidden");
+                            $("#jadwal-modal #schedule").removeClass("hidden");
+                            $("#jadwal-modal #schedule p.meet_schedule").html(data.meet_schedule);
                             $("#jadwal-modal #schedule p.schedule_accepted").addClass("text-green-500").html(`<strong>${data.schedule_accepted}</strong>`);
                         } else {
-                            $("#jadwal-modal #schedule p.schedule_accepted").addClass("text-red-700").html(`<strong>${data.schedule_accepted}</strong>`);
+                            $("#jadwal-modal form").removeClass("hidden");
+                            $("#jadwal-modal form").attr("action", `{{ url("owner/integrasi") }}/${data.supplier_id}`)
+                            $("#jadwal-modal form .status p").removeClass("text-yellow-700").addClass("text-red-500").html(`<strong>${data.schedule_accepted}. Harap tentukan jadwal yang sesuai</strong>`)
                         }
                     }
                 }
