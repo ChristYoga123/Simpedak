@@ -43,5 +43,11 @@
                 <div class="side-menu__title"> Integrasi </div>
             </a>
         </li>
+        <li>
+            <a href="{{ route("owner.jadwal.index") }}" class="side-menu {{ Route::is("owner.jadwal.*" ? "side-menu--active" : "") }}">
+                <div class="side-menu__icon"> <i data-feather="clock"></i> </div>
+                <div class="side-menu__title"> Penjadwalan </div>
+            </a>
+        </li>
     </ul>
 </nav>

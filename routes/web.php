@@ -4,10 +4,12 @@ use App\Http\Controllers\Owner\Auth\LoginController;
 use App\Http\Controllers\Owner\CooperateController;
 use App\Http\Controllers\Owner\DashboardController;
 use App\Http\Controllers\Owner\RawProductController;
+use App\Http\Controllers\Owner\ScheduleController;
 use App\Http\Controllers\Owner\ServeProductController;
 use App\Http\Controllers\Owner\TransactionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -75,6 +77,11 @@ Route::prefix("owner")->middleware("auth_owner")->group(function () {
     Route::get("integrasi", [CooperateController::class, "index"])->name("owner.integration.index");
     Route::get("integrasi/supplier/{user}", [CooperateController::class, "showSupplier"])->name("owner.integration.showSupplier");
     Route::post("integrasi/{supplier_id}", [CooperateController::class, "store"])->name("owner.integration.store");
+    // Schedule
+    Route::get("jadwal", [ScheduleController::class, "index"])->name("owner.jadwal.index");
+    Route::get("jadwal/{animal_id}/show", [ScheduleController::class, "show"])->name("owner.jadwal.show");
+    Route::post("jadwal", [ScheduleController::class, "store"])->name("owner.jadwal.store");
+    Route::put("jadwal/{animalOwner}/update", [ScheduleController::class, "update"])->name("owner.jadwal.update");
 });
 
 
