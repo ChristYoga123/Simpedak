@@ -27,7 +27,7 @@
                             @csrf
                             <div> 
                                 <label>Nama</label>
-                                <input name="name" type="text" class="input w-full border mt-2" placeholder="Masukkan nama produk jadi" required>
+                                <input name="name" type="text" class="input w-full border mt-2" placeholder="Masukkan nama produk jadi">
                             </div>
                             <div class="mt-3">
                                 <label>Satuan</label> 
@@ -69,7 +69,7 @@
                             <div class="mt-3">
                                 <label>Gambar</label>
                                 <img class="image-preview" width="300px">
-                                <input name="image" type="file" class="image-input input w-full border mt-2" accept="image/*" required onchange="previewImage()">
+                                <input name="image" type="file" class="image-input input w-full border mt-2" accept="image/*" onchange="previewImage()">
                             </div>
                             <button type="submit" class="button bg-theme-1 text-white mt-5">Simpan</button>
                         </form>
@@ -97,7 +97,7 @@
                         <div class="preview">
                             <div>
                                 <label>Jumlah penambahan stok</label>
-                                <input type="number" class="input w-full border mt-2" name="quantity" onkeyup="addRawProductStock()" value="0" required>
+                                <input type="number" class="input w-full border mt-2" name="quantity" onkeyup="addRawProductStock()" value="0">
                             </div>
                             <div class="mt-3">
                                 <p>Stok sekarang: <strong><span id="unit-sekarang"></span> + <span id="unit-tambah">Nilai Tambah</span> = <span id="unit-hasil">Hasil Tambah</span></strong></p>
@@ -257,7 +257,7 @@
                     $('#serve-product-data-modal input[name=name]').val(data.name);
                     $('#serve-product-data-modal select[name=unit]').val(data.unit).trigger("change");
                     $('#serve-product-data-modal input[name=price]').val(data.price);
-                    $('#serve-product-data-modal input[type=file]').removeAttr("required");
+                    $('#serve-product-data-modal input[type=file]').removeAttr("");
                     $('#serve-product-data-modal .image-preview').attr("src", data.image);
                 }
             });
@@ -336,7 +336,7 @@
         //             $("#serve-product-data-modal form").attr("action", `{{ url("owner/produk/bahan-baku") }}/${id}/update`);
         //             $("#serve-product-data-modal form").attr("method", "POST");
         //             $("#serve-product-data-modal form").append(`@method("PUT")`);
-        //             $("#serve-product-data-modal input[type='file']").removeAttr(`required`);
+        //             $("#serve-product-data-modal input[type='file']").removeAttr(`);
         //         },
         //         error: function(jqXHR, textStatus, errorThrown) {
         //             // Menampilkan pesan error jika Ajax gagal
@@ -394,13 +394,13 @@
             const inputContainer = document.querySelector('.input-container');
             const newInput = document.createElement('div');
             newInput.className="flex gap-2";
-            newInput.innerHTML = `<select data-hide-search="true" class="select2 w-full border" name="recipe[]" required>
+            newInput.innerHTML = `<select data-hide-search="true" class="select2 w-full border" name="recipe[]">
                                     <option value="">--- Pilih Resep ---</option>
                                     @foreach ($raw_product_owners as $item)
                                             <option value="{{ $item->Product->id }}">{{ $item->Product->name }}</option>
                                     @endforeach
                                 </select>
-                                <input type="number" step="any" class="input border h-10" placeholder="Masukkan jumlah bahan jadi" name="quantity[]" required>
+                                <input type="number" step="any" class="input border h-10" placeholder="Masukkan jumlah bahan jadi" name="quantity[]">
                                 <button type="button" class="button inline-block mr-1 mb-2 border border-theme-6 text-theme-6" onclick="removeInputElement(this)">-</button>`;
             window.requestAnimationFrame(() => {
                 // panggil fungsi Select2 pada elemen select yang baru saja ditambahkan

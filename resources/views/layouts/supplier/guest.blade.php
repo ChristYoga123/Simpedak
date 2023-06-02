@@ -47,10 +47,10 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="h-screen xl:h-auto flex py-5 xl:py-0 my-10 xl:my-0">
                     <div class="my-auto mx-auto xl:ml-20 bg-white xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
                         <h2 class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">
-                            Masuk sebagai Owner
+                            Masuk sebagai Supplier
                         </h2>
                         <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">Beberapa klik lagi untuk masuk ke akun Anda</div>
-                        <form action="{{ route("owner.login") }}" method="post">
+                        <form action="{{ route("supplier.login") }}" method="post">
                             @csrf
                             <div class="intro-x mt-8">
                                 <input type="email" class="intro-x login__input input input--lg border border-gray-300 block @error("email")
@@ -71,17 +71,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <input type="checkbox" class="input border mr-2" id="remember-me">
                                     <label class="cursor-pointer select-none" for="remember-me">Ingat saya</label>
                                 </div>
-                                <a href="">Masuk sebagai Supplier</a> 
+                                <a href="{{ route("owner.login.index") }}">Masuk sebagai Owner</a> 
                             </div>
                             <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                                 <button class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3">Masuk</button>
                             </div>
                         </form>
-                        {{-- <div class="intro-x mt-10 xl:mt-24 text-gray-700 text-center xl:text-left">
-                            By signin up, you agree to our 
-                            <br>
-                            <a class="text-theme-1" href="">Terms and Conditions</a> & <a class="text-theme-1" href="">Privacy Policy</a> 
-                        </div> --}}
                     </div>
                 </div>
                 <!-- END: Login Form -->

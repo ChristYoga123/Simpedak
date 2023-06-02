@@ -27,7 +27,7 @@
                             @csrf
                             <div> 
                                 <label>Nama</label>
-                                <input name="name" type="text" class="input w-full border mt-2" placeholder="Masukkan nama bahan baku" required>
+                                <input name="name" type="text" class="input w-full border mt-2" placeholder="Masukkan nama bahan baku">
                             </div>
                             <div class="mt-3">
                                 <label>Satuan</label> 
@@ -45,7 +45,7 @@
                             <div class="mt-3">
                                 <label>Gambar</label>
                                 <img class="image-preview" width="300px">
-                                <input name="image" type="file" class="image-input input w-full border mt-2" accept="image/*" required onchange="previewImage()">
+                                <input name="image" type="file" class="image-input input w-full border mt-2" accept="image/*" onchange="previewImage()">
                             </div>
                             <button type="submit" class="button bg-theme-1 text-white mt-5">Simpan</button>
                         </form>
@@ -74,14 +74,14 @@
                             <div>
                                 <label>Jumlah penambahan stok</label><br>
                                 <strong><i>(Jika terjadi kesalahan input yang menyebabkan stok menjadi lebih dari yang dimiliki, maka bisa dikurangi dengan memberi tanda (-) sebelum angka)</i></strong>
-                                <input type="number" class="input w-full border mt-2" name="quantity" onkeyup="addRawProductStock()" value="0" required>
+                                <input type="number" class="input w-full border mt-2" name="quantity" onkeyup="addRawProductStock()" value="0">
                             </div>
                             <div class="mt-3">
                                 <p>Stok sekarang: <strong><span id="unit-sekarang"></span> + <span id="unit-tambah">Nilai Tambah</span> = <span id="unit-hasil">Hasil Tambah</span></strong></p>
                             </div>
                             <div class="mt-3">
                                 <label>Deskripsi</label>
-                                <textarea data-feature="basic" class="summernote" name="history" required></textarea>
+                                <textarea data-feature="basic" class="summernote" name="history"></textarea>
                             </div>
                             <button type="submit" class="button bg-theme-1 text-white mt-5">Simpan</button>
                         </div>

@@ -37,11 +37,19 @@ class UserSeeder extends Seeder
 
         $owner->assignRole("Owner");
 
-        $owner = User::create([
+        $supplier = User::create([
             "name" => "Pak Edi",
             "email" => "ediii23@gmail.com",
             "password" => bcrypt("password")
         ]);
-        $owner->assignRole("Supplier");
+        Business::create([
+            "user_id" => $supplier->id,
+            "name" => "Peternakan Pak Edi",
+            "slug" => "peternakan-pak-edi",
+            "contact" => "082337598195",
+            "address" => "Jalan Ikan Paus IV/D-12, Jember",
+            "description" => "Peternakan sapi"
+        ]);
+        $supplier->assignRole("Supplier");
     }
 }
