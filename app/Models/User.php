@@ -67,4 +67,19 @@ class User extends Authenticatable implements HasMedia
     {
         $this->addMediaCollection("avatar");
     }
+
+    public function Owners()
+    {
+        return $this->hasMany(Cooperate::class, "owner_id");
+    }
+
+    public function  Suppliers()
+    {
+        return $this->hasMany(Cooperate::class, "supplier_id");
+    }
+
+    public function AnimalOwners()
+    {
+        return $this->hasMany(AnimalOwner::class);
+    }
 }

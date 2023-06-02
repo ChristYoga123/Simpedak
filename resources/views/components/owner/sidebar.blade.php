@@ -38,24 +38,16 @@
             </a>
         </li>
         <li>
-            <a href="javascript:;" class="side-menu {{ Route::is("owner.integration.*") ? "side-menu--active" : "" }}">
-                <div class="side-menu__icon"> <i data-feather="box"></i> </div>
-                <div class="side-menu__title"> Integrasi <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
+            <a href="{{ route("owner.integration.index") }}" class="side-menu {{ Route::is("owner.integration.*") ? "side-menu--active" : "" }}">
+                <div class="side-menu__icon"> <i data-feather="message-square"></i> </div>
+                <div class="side-menu__title"> Integrasi </div>
             </a>
-            <ul class="">
-                <li>
-                    <a href="{{ route("owner.integration.chat.index") }}" class="side-menu {{ Route::is("owner.integration.chat.index") ? "side-menu--active" : "" }}">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title"> Kerja Sama </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="side-menu">
-                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                        <div class="side-menu__title"> Perjanjian </div>
-                    </a>
-                </li>
-            </ul>
+        </li>
+        <li>
+            <a href="{{ route("owner.jadwal.index") }}" class="side-menu {{ Route::is("owner.jadwal.*" ? "side-menu--active" : "") }}">
+                <div class="side-menu__icon"> <i data-feather="clock"></i> </div>
+                <div class="side-menu__title"> Penjadwalan </div>
+            </a>
         </li>
     </ul>
 </nav>

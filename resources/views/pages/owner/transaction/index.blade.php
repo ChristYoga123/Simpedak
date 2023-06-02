@@ -27,17 +27,17 @@
                             @csrf
                             <div> 
                                 <label>Nama</label>
-                                <input name="name" type="text" class="input w-full border mt-2" placeholder="Masukkan nama pembeli" required>
+                                <input name="name" type="text" class="input w-full border mt-2" placeholder="Masukkan nama pembeli">
                             </div>
 
                             <div class="mt-3"> 
                                 <label>Kontak</label>
-                                <input name="contact" type="number" class="input w-full border mt-2" placeholder="Masukkan kontak pembeli" required>
+                                <input name="contact" type="number" class="input w-full border mt-2" placeholder="Masukkan kontak pembeli">
                             </div>
 
                             <div class="mt-3"> 
                                 <label>Alamat</label>
-                                <input name="address" type="text" class="input w-full border mt-2" placeholder="Masukkan alamat pembeli" required>
+                                <input name="address" type="text" class="input w-full border mt-2" placeholder="Masukkan alamat pembeli">
                             </div>
                             <div class="mt-3">
                                 <label>Produk yang dibeli</label> 
