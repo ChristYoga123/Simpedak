@@ -66,5 +66,7 @@ class Kernel extends HttpKernel
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'guest_owner' => \App\Http\Middleware\Owner\RedirectIfAuthenticated::class,
         'auth_owner' => \App\Http\Middleware\Owner\Authenticate::class,
+        'guest_supplier' => \App\Http\Middleware\Supplier\RedirectIfAuthenticated::class,
+        'auth_supplier' => \App\Http\Middleware\Supplier\Authenticate::class,
     ];
 }
