@@ -82,4 +82,9 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->hasMany(AnimalOwner::class);
     }
+
+    public function ClientTransactions()
+    {
+        return $this->hasOne(ClientTransaction::class);
+    }
 }

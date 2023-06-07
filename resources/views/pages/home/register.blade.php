@@ -25,17 +25,20 @@
         <div class="lg:py-5 p-3 lg:px-10 w-full rounded-xl border border-base-200">
             <div class="font-medium text-base">Sudah memiliki akun? <strong>Masuk</strong></div>
             <div class="flex gap-5 flex-wrap mt-3">
-                <div class="flex flex-col gap-3">
-                    <label class="font-md">Alamat Email</label>
-                    <input type="text" class="input w-[23.5rem] lg:w-96 max-w-lg border border-base-200">
-                </div>
-                <div class="flex flex-col gap-3">
-                    <label class="font-md">Password</label>
-                    <input type="text" class="input w-[23.5rem] lg:w-96 max-w-lg border border-base-200">
-                </div>
-                <div class="flex items-end gap-3">
-                    <button class="btn w-[23.5rem] flex bg-[#3A00E5] lg:w-96 border-0">Masuk</button>
-                </div>
+                <form action="{{ route("home.login") }}" method="post" class="flex flex-col lg:flex-row gap-5">
+                    @csrf
+                    <div class="flex flex-col gap-3">
+                        <label class="font-md">Alamat Email</label>
+                        <input type="email" class="input w-[23.5rem] lg:w-96 max-w-lg border border-base-200" name="email">
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <label class="font-md">Password</label>
+                        <input type="password" class="input w-[23.5rem] lg:w-96 max-w-lg border border-base-200" name="password">
+                    </div>
+                    <div class="flex items-end gap-3">
+                        <button class="btn w-[23.5rem] flex bg-[#3A00E5] lg:w-96 border-0">Masuk</button>
+                    </div>
+                </form>
             </div>
         </div>
 

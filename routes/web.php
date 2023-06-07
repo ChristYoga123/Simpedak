@@ -32,6 +32,10 @@ Route::get('/', [HomeController::class, "index"])->name("home.index");
 Route::get("/detail-fitur", [HomeController::class, "feature"])->name("home.feature");
 Route::get("/register", [RegisterController::class, "register_index"])->name("home.register");
 Route::post("/register", [RegisterController::class, "register"])->name("home.register");
+Route::post("/login", [RegisterController::class, "login"])->name("home.login");
+// Midtrans
+Route::get("payment/success", [RegisterController::class, "midtransCallback"]);
+Route::post("payment/success", [RegisterController::class, "midtransCallback"]);
 
 Route::get('/admin/dashboard', function () {
     return view('dashboard');

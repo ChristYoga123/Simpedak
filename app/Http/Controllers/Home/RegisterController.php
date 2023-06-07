@@ -8,6 +8,7 @@ use App\Models\ClientTransaction;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Midtrans;
@@ -140,7 +141,7 @@ class RegisterController extends Controller
 
     public function midtransCallback(Request $request)
     {
-        $notif = new Midtrans\Notification();
+        $notif = $request->method() == "POST" ? new Midtrans\Notification() : Midtrans\Transaction::status($request->order_id);
 
         $transaction_status = $notif->transaction_status;
         $fraud = $notif->fraud_status;
@@ -182,5 +183,32 @@ class RegisterController extends Controller
         $clientTransaction->save();
 
         return redirect()->route("home.index");
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate(
+            [
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ],
+            [
+                "email.required" => "Kolom email harap diisi",
+                "email.email" => "Kolom email harap diisi dengan format email yang benar",
+                "password" => "Kolom password harap diisi"
+            ]
+        );
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->route("home.index");
+        }
+
+        return redirect()->back()->with("error", "Maaf, akun atau password belum terdaftar. Harap registrasi terlebih dahulu");
+
+        $credential = [$request->email, $request->password];
+
+        // 
     }
 }
