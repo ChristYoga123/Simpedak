@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\TestEvent;
 use App\Http\Controllers\Home\RegisterController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Owner\Auth\LoginController as OwnerLoginController;
