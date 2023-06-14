@@ -107,9 +107,9 @@
                 <div class="card-body">
                     <div class="flex gap-3">
                         <img src="{{ asset("images/logo.png") }}" class="rounded-full" width="50px">
-                        <h2 class="card-title">Card title!</h2>
+                        <h2 class="card-title">Chintya Fitorus</h2>
                     </div>
-                    <p class="mt-5 text-justify">"Sejak saya mulai menggunakan fitur premium, pengalaman saya dalam mengelola peternakan secara efektif dan efisien benar-benar meningkat pesat"</p>
+                    <p class="mt-5 text-justify">"Sejak saya mulai menggunakan fitur premium, pengalaman saya dalam mengelola peternakan secara efisien dan efektif benar-benar meningkat pesat”</p>
                 </div>
             </div>
 
@@ -117,9 +117,9 @@
                 <div class="card-body">
                     <div class="flex gap-3">
                         <img src="{{ asset("images/logo.png") }}" class="rounded-full" width="50px">
-                        <h2 class="card-title">Card title!</h2>
+                        <h2 class="card-title">M. Yoga</h2>
                     </div>
-                    <p class="mt-5 text-justify">"Sejak saya mulai menggunakan fitur premium, pengalaman saya dalam mengelola peternakan secara efektif dan efisien benar-benar meningkat pesat"</p>
+                    <p class="mt-5 text-justify">“Saya bisa melakukan pencatatan stok gudang dengan mudah, sehingga tidak terjadi kekurangan stok saat ada pembelian”</p>
                 </div>
             </div>
 
@@ -127,9 +127,9 @@
                 <div class="card-body">
                     <div class="flex gap-3">
                         <img src="{{ asset("images/logo.png") }}" class="rounded-full" width="50px">
-                        <h2 class="card-title">Card title!</h2>
+                        <h2 class="card-title">Christianus Yahya</h2>
                     </div>
-                    <p class="mt-5 text-justify">"Sejak saya mulai menggunakan fitur premium, pengalaman saya dalam mengelola peternakan secara efektif dan efisien benar-benar meningkat pesat"</p>
+                    <p class="mt-5 text-justify">“Benar-benar memudahkan saya untuk mengelola bisnis pembuatan yougurt ini, saya bisa terhubung dengan supplier penghasil bahan baku dengan mudah tanpa takut  ditipu dengan kualitasnya”</p>
                 </div>
             </div>
 
@@ -137,9 +137,9 @@
                 <div class="card-body">
                     <div class="flex gap-3">
                         <img src="{{ asset("images/logo.png") }}" class="rounded-full" width="50px">
-                        <h2 class="card-title">Card title!</h2>
+                        <h2 class="card-title">Ferli Wardhani</h2>
                     </div>
-                    <p class="mt-5 text-justify">"Sejak saya mulai menggunakan fitur premium, pengalaman saya dalam mengelola peternakan secara efektif dan efisien benar-benar meningkat pesat"</p>
+                    <p class="mt-5 text-justify">“Dukungan pelanggan yang disediakan oleh tim aplikasiluar biasa. Mereka responsif terhadap pertanyaan dan masalah yang saya hadapi“</p>
                 </div>
             </div>
 
@@ -147,9 +147,9 @@
                 <div class="card-body">
                     <div class="flex gap-3">
                         <img src="{{ asset("images/logo.png") }}" class="rounded-full" width="50px">
-                        <h2 class="card-title">Card title!</h2>
+                        <h2 class="card-title">Amelia Dewi P</h2>
                     </div>
-                    <p class="mt-5 text-justify">"Sejak saya mulai menggunakan fitur premium, pengalaman saya dalam mengelola peternakan secara efektif dan efisien benar-benar meningkat pesat"</p>
+                    <p class="mt-5 text-justify">“Sebagai peternak baru fitur penjadwalan sangat cocok buat saya mengetahui kapan harus memberi makan ternak, dengan fitur ini kesehatan ternak saya bisa terjaga dengan baik.”</p>
                 </div>
             </div>
 
@@ -157,9 +157,9 @@
                 <div class="card-body">
                     <div class="flex gap-3">
                         <img src="{{ asset("images/logo.png") }}" class="rounded-full" width="50px">
-                        <h2 class="card-title">Card title!</h2>
+                        <h2 class="card-title">Ilham Wibisono</h2>
                     </div>
-                    <p class="mt-5 text-justify">"Sejak saya mulai menggunakan fitur premium, pengalaman saya dalam mengelola peternakan secara efektif dan efisien benar-benar meningkat pesat"</p>
+                    <p class="mt-5 text-justify">“Proses pencatatan dll sudah tercover pada fitur di Simpedak, jadi saya bisa lebih fokus meningkatkan di bagian produksi”</p>
                 </div>
             </div>
         </div>

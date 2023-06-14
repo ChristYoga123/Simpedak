@@ -5,6 +5,7 @@ use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Owner\Auth\LoginController as OwnerLoginController;
 use App\Http\Controllers\Owner\CooperateController as OwnerCooperateController;
 use App\Http\Controllers\Owner\DashboardController;
+use App\Http\Controllers\Owner\ProfileController as OwnerProfileController;
 use App\Http\Controllers\Owner\RawProductController;
 use App\Http\Controllers\Owner\ScheduleController;
 use App\Http\Controllers\Owner\ServeProductController;
@@ -92,6 +93,9 @@ Route::prefix("owner")->middleware(["auth_owner", "role:Owner"])->name("owner.")
     Route::get("jadwal/{animal_id}/show", [ScheduleController::class, "show"])->name("jadwal.show");
     Route::post("jadwal", [ScheduleController::class, "store"])->name("jadwal.store");
     Route::put("jadwal/{animalOwner}/update", [ScheduleController::class, "update"])->name("jadwal.update");
+    // Profile
+    Route::get("profile", [OwnerProfileController::class, "index"])->name("profile.index");
+    Route::put("profile/{user}", [OwnerProfileController::class, "update"])->name("profile.update");
 });
 
 /* Supplier Route */

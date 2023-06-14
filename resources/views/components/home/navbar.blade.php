@@ -25,17 +25,20 @@
     </div>
     <div class="navbar-end">
         @auth
-            @if (Auth::user()->ClientTransactions->payment_status =="paid")
-                @if (Auth::user()->roles->first()->name == "Owner")
-                    <a href="{{ route("owner.dashboard.index") }}" class="btn bg-[#3A00E5] rounded-2xl border-0">Masuk Dashboard Owner</a>
-                @elseif (Auth::user()->roles->first()->name == "Supplier")
-                    <a href="{{ route("supplier.dashboard.index") }}" class="btn bg-[#3A00E5] rounded-2xl border-0">Masuk Dashboard Supplier</a>
+            @if (Auth::user()->ClientTransactions)
+                @if (Auth::user()->ClientTransactions->payment_status =="paid")
+                    @if (Auth::user()->hasRole("Owner"))
+                        <a href="{{ route("owner.dashboard.index") }}" class="btn bg-[#3A00E5] rounded-2xl border-0">Masuk Dashboard Owner</a>
+                    @elseif (Auth::user()->hasRole("Supplier"))
+                        <a href="{{ route("supplier.dashboard.index") }}" class="btn bg-[#3A00E5] rounded-2xl border-0">Masuk Dashboard Supplier</a>
+                    @endif
+                @else
+                    <a href="btn bg-[#3A00E5] rounded-2xl border-0">Lanjutkan Pembayaran</a>
                 @endif
-            @else
-                <a href="btn bg-[#3A00E5] rounded-2xl border-0">Lanjutkan Pembayaran</a>
             @endif
-        @else
-            <a class="btn bg-[#3A00E5] rounded-2xl border-0">Masuk</a>
         @endauth
+        @guest
+            <button class="btn bg-[#3A00E5] rounded-2xl border-0">Masuk</button>
+        @endguest
     </div>
 </div>

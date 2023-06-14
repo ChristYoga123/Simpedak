@@ -6,7 +6,7 @@
         <img src="{{ asset("images/detail-fitur.png") }}" alt="">
     </div>
 
-    <div class="list-feature w-96 p-5 shadow shadow-lg h-[300px]">
+    <div class="list-feature w-[25rem] p-5 shadow shadow-lg h-[300px]">
         <div class="flex justify-between">
             <p class="font-bold">Paket Bundling</p>
             <p class="font-semibold">Rp200.000,00</p>
@@ -20,12 +20,12 @@
 
             <div class="flex gap-8">
                 <img src="{{ asset("images/beenhere.png") }}" alt="">
-                <p>Akses penuh semua fitur utama</p>
+                <p>Sudah terintegrasi ke WhatsApp anda</p>
             </div>
 
             <div class="flex gap-8">
                 <img src="{{ asset("images/beenhere.png") }}" alt="">
-                <p>Akses penuh semua fitur utama</p>
+                <p>Beli sekali, seumur hidup menikmati</p>
             </div>
         </div>
     </div>
