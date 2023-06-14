@@ -15,14 +15,19 @@
         <script src="{{ asset("assets/sweetalert2/dist/sweetalert2.all.min.js") }}"></script>
         <link rel="stylesheet" href="{{ asset("assets/select2/dist/css/select2.min.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/select2/dist/js/select2.min.js") }}">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <!-- END: CSS Assets-->
     </head>
 </head>
-<body class="font-poppins">
+<body class="font-poppins scroll-smooth">
     @include('components.home.navbar')
     @yield('content')
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     @stack('script')
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

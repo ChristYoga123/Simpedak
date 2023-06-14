@@ -5,7 +5,7 @@
 <section id="hero" class="w-full h-screen justify-center items-center">
     <div class="hero min-h-screen bg-[url('/public/images/bg-home.png')] bg-cover bg-[#3A00E5] mix-blend-normal">
         <div class="hero-content text-center text-white">
-            <div>
+            <div data-aos="fade-up" data-aos-duration="2000">
                 <h1 class="text-5xl font-bold">Selamat Datang</h1>
                 <p class="py-6">
                     Selamat datang di website <strong>SIMPEDAK</strong>. Bergabunglah sebagai anggota kami dan <br>
@@ -26,9 +26,9 @@
 <!-- BEGIN: CONTENT --->
 <section id="about-us" class="w-full h-screen justify-center items-center mt-32 md:mt-72">
     <div class="flex flex-col gap-20">
-        <p class="text-4xl font-bold text-center">Tentang Kami</p>
+        <p class="text-4xl font-bold text-center" data-aos="fade-up" data-aos-duration="2000">Tentang Kami</p>
         <div class="flex gap-28 justify-center">
-            <div class="flex flex-col gap-5 text-center ">
+            <div class="flex flex-col gap-5 text-center "data-aos="fade-right" data-aos-duration="2000">
                 <img src="{{ asset("images/about-1.png") }}" class="rounded-full mx-auto" width="150px">
                 <p class="font-medium">
                     Bantu pengelolaan ternak <br>
@@ -36,7 +36,7 @@
                 </p>
             </div>
 
-            <div class="flex flex-col gap-5 text-center">
+            <div class="flex flex-col gap-5 text-center" data-aos="fade-up" data-aos-duration="2000">
                 <img src="{{ asset("images/about-2.png") }}" class="rounded-full mx-auto" width="150px">
                 <p class="font-medium">
                     Pertemukan Anda dengan <br>
@@ -44,7 +44,7 @@
                 </p>
             </div>
 
-            <div class="flex flex-col gap-5 text-center">
+            <div class="flex flex-col gap-5 text-center" data-aos="fade-left" data-aos-duration="2000">
                 <img src="{{ asset("images/about-3.png") }}" class="rounded-full mx-auto" width="150px">
                 <p class="font-medium">
                     Pantau stok gudang tanpa<br>
@@ -54,10 +54,10 @@
         </div>
     </div>
 
-    <div class="mt-24 flex flex-col gap-20">
-        <p class="text-4xl font-bold text-center">Fitur Kami</p>
+    <div class="mt-24 flex flex-col gap-20" id="fitur">
+        <p class="text-4xl font-bold text-center" data-aos="fade-up" data-aos-duration="2000">Fitur Kami</p>
         <div class="flex flex-col items-center lg:flex-row gap-3 justify-center">
-            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+            <div class="card card-compact w-96 bg-base-100 shadow-xl" data-aos="fade-right" data-aos-duration="2000">
                 <figure class=""><img src="{{ asset("images/fitur-1.png") }}" alt="Shoes" class="bg-cover" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">Fitur Manajemen Stok</h2>
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+            <div class="card card-compact w-96 bg-base-100 shadow-xl" data-aos="fade-up" data-aos-duration="2000">
                 <figure><img src="{{ asset("images/fitur-2.png") }}" alt="Shoes" class="bg-cover" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">Fitur Integrasi</h2>
@@ -82,7 +82,7 @@
                 </div>
             </div>
 
-            <div class="card card-compact w-96 bg-base-100 shadow-xl">
+            <div class="card card-compact w-96 bg-base-100 shadow-xl" data-aos="fade-left" data-aos-duration="2000">
                 <figure><img src="{{ asset("images/fitur-3.png") }}" alt="Shoes" class="bg-cover" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">Fitur Penjadwalan</h2>
@@ -95,14 +95,14 @@
                 </div>
             </div>
         </div>
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center" data-aos="fade-up" data-aos-duration="2000">
             <button class="btn bg-[#3A00E5] w-[785px]">Detail Fitur</button>
         </div>
     </div>
 
-    <div class="mt-24 flex flex-col gap-20 mb-20">
-        <p class="text-4xl font-bold text-center">Apa Kata Mereka?</p>
-        <div class="flex flex-wrap justify-center gap-3">
+    <div class="mt-24 flex flex-col gap-20 mb-20" id="testimoni">
+        <p class="text-4xl font-bold text-center" data-aos="fade-up" data-aos-duration="2000">Apa Kata Mereka?</p>
+        <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-duration="2000">
             <div class="card w-[26rem] bg-base-100 shadow-xl">
                 <div class="card-body">
                     <div class="flex gap-3">
