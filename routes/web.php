@@ -98,6 +98,7 @@ Route::prefix("owner")->middleware(["auth_owner", "role:Owner"])->name("owner.")
     Route::get("jadwal/{animal_id}/show", [ScheduleController::class, "show"])->name("jadwal.show");
     Route::post("jadwal", [ScheduleController::class, "store"])->name("jadwal.store");
     Route::put("jadwal/{animalOwner}/update", [ScheduleController::class, "update"])->name("jadwal.update");
+    Route::delete("jadwal/{animalOwner}", [ScheduleController::class, "destroy"])->name("jadwal.destroy");
     // Profile
     Route::get("profile", [OwnerProfileController::class, "index"])->name("profile.index");
     Route::put("profile/{user}", [OwnerProfileController::class, "update"])->name("profile.update");

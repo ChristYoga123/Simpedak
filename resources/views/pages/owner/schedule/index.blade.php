@@ -113,6 +113,12 @@
                     <td class="border-b w-5">
                         <div class="flex sm:justify-center items-center">
                             <a class="edit-jadwal flex items-center mr-3 text-yellow-700" href="javascript:;" data-toggle="modal" data-target="#jadwal-modal" onclick="editSchedule({{ $animal->Animal->id }})"> <i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edit Data</a>
+
+                            <form action="{{ route("owner.jadwal.destroy", $animal->id) }}" method="post" id="hapus">
+                                @csrf
+                                @method("DELETE")
+                                <button type="button" class="hapus-jadwal btn bg-base flex items-center mr-3 text-red-700"> <i data-feather="trash" class="w-4 h-4 mr-1"></i> Hapus Data</button>
+                            </form>
                         </div>
                     </td>
                 </tr>
@@ -156,6 +162,22 @@
     {{-- Additional Script --}}
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
+        $("button.hapus-jadwal").on("click", function()
+        {
+            Swal.fire({
+                title: 'Apakah anda yakin untuk menghapus data jadwal ini?',
+                showDenyButton: true,
+                confirmButtonText: 'Hapus',
+                denyButtonText: `Batal`,
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    $("form#hapus").submit();
+                } else if (result.isDenied) {
+                    Swal.fire('Batal', 'Data jadwal batal dihapus', 'info')
+                }
+            });
+        });
         function showSchedule(id)
         {
             $.ajax({

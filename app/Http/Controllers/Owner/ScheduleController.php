@@ -138,6 +138,13 @@ class ScheduleController extends Controller
         return response()->json($schedule);
     }
 
+    public function destroy(AnimalOwner $animalOwner)
+    {
+        AnimalSchedule::whereAnimalOwnerId($animalOwner->id)->delete();
+        $animalOwner->delete();
+        return redirect()->back()->with("success", "Data berhasil dihapus");
+    }
+
     private function isNameIncludeInArray($array)
     {
         if (count($array) != count(array_unique($array))) {
