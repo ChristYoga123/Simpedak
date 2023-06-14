@@ -9,7 +9,7 @@
                 <div class="text-xs text-theme-41">{{ auth()->user()->name }}</div>
             </div>
             <div class="p-2">
-                <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
+                <a href="{{ route("supplier.profile.index") }}" class="flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 rounded-md"> <i data-feather="user" class="w-4 h-4 mr-2"></i> Profile </a>
             </div>
             <div class="p-2 border-t border-theme-40">
                 <form action="{{ route("supplier.logout") }}" method="post">

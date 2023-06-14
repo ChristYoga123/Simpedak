@@ -15,6 +15,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Supplier\Auth\LoginController as SupplierLoginController;
 use App\Http\Controllers\Supplier\CooperateController as SupplierCooperateController;
 use App\Http\Controllers\Supplier\DashboardController as SupplierDashboardController;
+use App\Http\Controllers\Supplier\ProfileController as SupplierProfileController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Route;
 
@@ -116,6 +117,9 @@ Route::prefix("supplier")->name("supplier.")->middleware(["auth_supplier", "role
     Route::get("integrasi/owner/{user}", [SupplierCooperateController::class, "showOwner"])->name("integration.showOwner");
     Route::post("integrasi/owner/{user}", [SupplierCooperateController::class, "updateCooperateSchedule"])->name("integration.store");
     Route::post("integrasi/owner/final/{user}", [SupplierCooperateController::class, "updateCooperate"])->name("integration.cooperate.final.update");
+    // Profile
+    Route::get("profile", [SupplierProfileController::class, "index"])->name("profile.index");
+    Route::put("profile/{user}", [SupplierProfileController::class, "update"])->name("profile.update");
 });
 
 
