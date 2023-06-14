@@ -1,6 +1,6 @@
 <div class="intro-x dropdown w-8 h-8 relative">
     <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in">
-        <img alt="Midone Tailwind HTML Admin Template" src="/assets/images/profile-12.jpg">
+        <img alt="Midone Tailwind HTML Admin Template" src="{{ Auth::user()->getFirstMediaUrl("avatar") }}">
     </div>
     <div class="dropdown-box mt-10 absolute w-56 top-0 right-0 z-20">
         <div class="dropdown-box__content box bg-theme-38 text-white">

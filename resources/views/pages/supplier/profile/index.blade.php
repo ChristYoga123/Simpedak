@@ -1,4 +1,4 @@
-@extends('layouts.owner.app')
+@extends('layouts.supplier.app')
 
 @section('content')
 <div class="intro-y flex items-center mt-8">
