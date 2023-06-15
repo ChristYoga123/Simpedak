@@ -60,4 +60,11 @@ class CooperateController extends Controller
             "supplier_id" => $user->id
         ]);
     }
+
+    public function show(User $user)
+    {
+        return view("pages.owner.cooperate.show")->with([
+            "supplier" => $user
+        ]);
+    }
 }

@@ -92,6 +92,7 @@ Route::prefix("owner")->middleware(["auth_owner", "role:Owner"])->name("owner.")
     // Integration
     Route::get("integrasi", [OwnerCooperateController::class, "index"])->name("integration.index");
     Route::get("integrasi/supplier/{user}", [OwnerCooperateController::class, "showSupplier"])->name("integration.showSupplier");
+    Route::get("integrasi/supplier/{user}/detail", [OwnerCooperateController::class, "show"])->name("integration.show.supplier");
     Route::post("integrasi/{supplier_id}", [OwnerCooperateController::class, "store"])->name("integration.store");
     // Schedule
     Route::get("jadwal", [ScheduleController::class, "index"])->name("jadwal.index");
