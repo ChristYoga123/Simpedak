@@ -71,7 +71,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <input type="checkbox" class="input border mr-2" id="remember-me">
                                     <label class="cursor-pointer select-none" for="remember-me">Ingat saya</label>
                                 </div>
-                                <a href="">Masuk sebagai Supplier</a> 
+                                <a href="{{ route("supplier.login.index") }}">Masuk sebagai Supplier</a> 
                             </div>
                             <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                                 <button class="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3">Masuk</button>

@@ -132,5 +132,15 @@
                 </div>
             </div>
         </div>
+        @vite("resources/js/app.js")
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) { 
+                Echo.private(`test-channel`)
+                .listen('TestEvent', (e) => {
+                    console.log("Event dikirim");
+                    console.log(e.order);
+                });
+            });
+        </script>
     </body>
 </html>

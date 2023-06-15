@@ -27,6 +27,7 @@ class User extends Authenticatable implements HasMedia
         'address',
         'email',
         'password',
+        'email_verified_at'
     ];
 
     /**
@@ -81,5 +82,10 @@ class User extends Authenticatable implements HasMedia
     public function AnimalOwners()
     {
         return $this->hasMany(AnimalOwner::class);
+    }
+
+    public function ClientTransactions()
+    {
+        return $this->hasOne(ClientTransaction::class);
     }
 }

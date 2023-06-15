@@ -26,7 +26,11 @@
                     <thead>
                     <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
                         <th class="px-4 py-3">Name</th>
+                        <th class="px-4 py-3">Role</th>
+                        <th class="px-4 py-3">Foto</th>
                         <th class="px-4 py-3">Email</th>
+                        <th class="px-4 py-3">Surat Usaha</th>
+                        <th class="px-4 py-3">Verifikasi</th>
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y">
@@ -36,7 +40,28 @@
                                 {{ $user->name }}
                             </td>
                             <td class="px-4 py-3 text-sm">
+                                {{ $user->roles->first()->name }}
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <img src="{{ $user->getFirstMediaUrl("avatar") }}" alt="" width="100px" height="100px">
+                            </td>
+                            <td class="px-4 py-3 text-sm">
                                 {{ $user->email }}
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <a href="{{ $user->Business->getFirstMediaUrl("business-permission-letter") }}">
+                                    <button class="btn btn-primary">Download Bukti Usaha</button>
+                                </a>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <form action="{{ route("user.update", $user->id) }}" method="post" id="email_verified_at_{{ $user->id }}">
+                                    @csrf
+                                    @method('PUT')
+                                    <select class="select select-bordered w-full max-w-xs" name="email_verified_at" onchange="submitForm({{ $user->id }})">
+                                        <option value="" {{ $user->email_verified_at === null ? "selected" : "" }}>Belum Diverifikasi</option>
+                                        <option value="Terverifikasi" {{ $user->email_verified_at ? "selected" : "" }}>Terverifikasi</option>
+                                    </select>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -49,4 +74,11 @@
         </div>
 
     </div>
+
+    <script>
+        function submitForm(userId) {
+            const form = document.querySelector("#email_verified_at_" + userId);
+            form.submit();
+        }
+    </script>
 </x-app-layout>

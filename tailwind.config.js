@@ -9,6 +9,9 @@ module.exports = {
     ],
 
     theme: {
+        fontFamily: {
+            poppins: "Poppins",
+        },
         themeVariants: ["dark"],
         Forms: (theme) => ({
             default: {
@@ -174,5 +177,5 @@ module.exports = {
         borderColor: ["focus", "hover"],
         boxShadow: ["focus"],
     },
-    plugins: [require("@tailwindcss/forms")],
+    plugins: [require("@tailwindcss/forms"), require("daisyui")],
 };

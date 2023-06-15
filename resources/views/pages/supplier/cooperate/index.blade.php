@@ -1,10 +1,21 @@
 @extends('layouts.supplier.app')
 
 @section('content')
-<div class="intro-y flex flex-col sm:flex-row items-center mt-8">
+<div class="intro-y flex flex-col  mt-8">
     <h2 class="text-lg font-medium mr-auto">
         Data Kerja Sama
     </h2>
+
+    <div class="mt-5">
+        <p class="text-lg font-semibold">Alur Kerja Sama</p>
+        <ul>
+            <li>- Owner dipersilahkan untuk melakukan download template kerja sama</li>
+            <li>- Lakukan perjanjian bertemu dengan menggunakan fitur chat atau bisa request waktu secara langsung</li>
+            <li>- Template kerja sama yang sudah diisi dan ditandatangani owner dibawa saat pertemuan</li>
+            <li>- Jika terjadi kesepakatan, berikan surat kepada supplier.</li>
+            <li>- Supplier menandatangani surat dan melakukan upload surat final di sistem</li>
+        </ul>
+    </div>
 </div>
 <!-- BEGIN: Chat Modal --->
 <!-- END: Chat Modal --->
@@ -133,7 +144,7 @@
                     </td>
                     <td class="border-b w-5">
                         <div class="flex sm:justify-center items-center">
-                            <a class="flex items-center mr-3 text-yellow-700" href="#"> <i data-feather="message-circle" class="w-4 h-4 mr-1"></i> Chat </a>
+                            <a class="flex items-center mr-3 text-yellow-700" href="#"> <i data-feather="message-circle" class="w-4 h-4 mr-1"></i> Detail </a>
                             <a class="flex items-center mr-3 text-green-500" href="javascript:;" data-toggle="modal" data-target="#jadwal-modal" onclick="addCooperate({{ $owner->id }})"> <i data-feather="calendar" class="w-4 h-4 mr-1"></i> Jadwal </a>
                             <a class="flex items-center text-blue-700" href="javascript:;" data-toggle="modal" data-target="#kesepakatan-modal" onclick="showCooperate({{ $owner->id }})"> <i data-feather="archive" class="w-4 h-4 mr-1"></i> Kesepakatan </a>
                         </div>

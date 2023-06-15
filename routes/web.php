@@ -1,8 +1,12 @@
 <?php
 
+use App\Events\TestEvent;
+use App\Http\Controllers\Home\RegisterController;
+use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Owner\Auth\LoginController as OwnerLoginController;
 use App\Http\Controllers\Owner\CooperateController as OwnerCooperateController;
 use App\Http\Controllers\Owner\DashboardController;
+use App\Http\Controllers\Owner\ProfileController as OwnerProfileController;
 use App\Http\Controllers\Owner\RawProductController;
 use App\Http\Controllers\Owner\ScheduleController;
 use App\Http\Controllers\Owner\ServeProductController;
@@ -12,6 +16,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Supplier\Auth\LoginController as SupplierLoginController;
 use App\Http\Controllers\Supplier\CooperateController as SupplierCooperateController;
 use App\Http\Controllers\Supplier\DashboardController as SupplierDashboardController;
+use App\Http\Controllers\Supplier\ProfileController as SupplierProfileController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Route;
 
@@ -26,9 +31,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, "index"])->name("home.index");
+Route::get("/detail-fitur", [HomeController::class, "feature"])->name("home.feature");
+Route::get("/register", [RegisterController::class, "register_index"])->name("home.register");
+Route::post("/register", [RegisterController::class, "register"])->name("home.register");
+Route::post("/login", [RegisterController::class, "login"])->name("home.login");
+// Midtrans
+Route::get("payment/success", [RegisterController::class, "midtransCallback"]);
+Route::post("payment/success", [RegisterController::class, "midtransCallback"]);
 
 Route::get('/admin/dashboard', function () {
     return view('dashboard');
@@ -42,6 +52,9 @@ Route::middleware('auth')->prefix("admin")->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // User
+    Route::put("users/{user}", [UserController::class, "update"])->name("user.update");
 });
 
 /* Owner Route */
@@ -79,12 +92,17 @@ Route::prefix("owner")->middleware(["auth_owner", "role:Owner"])->name("owner.")
     // Integration
     Route::get("integrasi", [OwnerCooperateController::class, "index"])->name("integration.index");
     Route::get("integrasi/supplier/{user}", [OwnerCooperateController::class, "showSupplier"])->name("integration.showSupplier");
+    Route::get("integrasi/supplier/{user}/detail", [OwnerCooperateController::class, "show"])->name("integration.show.supplier");
     Route::post("integrasi/{supplier_id}", [OwnerCooperateController::class, "store"])->name("integration.store");
     // Schedule
     Route::get("jadwal", [ScheduleController::class, "index"])->name("jadwal.index");
     Route::get("jadwal/{animal_id}/show", [ScheduleController::class, "show"])->name("jadwal.show");
     Route::post("jadwal", [ScheduleController::class, "store"])->name("jadwal.store");
     Route::put("jadwal/{animalOwner}/update", [ScheduleController::class, "update"])->name("jadwal.update");
+    Route::delete("jadwal/{animalOwner}", [ScheduleController::class, "destroy"])->name("jadwal.destroy");
+    // Profile
+    Route::get("profile", [OwnerProfileController::class, "index"])->name("profile.index");
+    Route::put("profile/{user}", [OwnerProfileController::class, "update"])->name("profile.update");
 });
 
 /* Supplier Route */
@@ -105,6 +123,9 @@ Route::prefix("supplier")->name("supplier.")->middleware(["auth_supplier", "role
     Route::get("integrasi/owner/{user}", [SupplierCooperateController::class, "showOwner"])->name("integration.showOwner");
     Route::post("integrasi/owner/{user}", [SupplierCooperateController::class, "updateCooperateSchedule"])->name("integration.store");
     Route::post("integrasi/owner/final/{user}", [SupplierCooperateController::class, "updateCooperate"])->name("integration.cooperate.final.update");
+    // Profile
+    Route::get("profile", [SupplierProfileController::class, "index"])->name("profile.index");
+    Route::put("profile/{user}", [SupplierProfileController::class, "update"])->name("profile.update");
 });
 
 

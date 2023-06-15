@@ -34,14 +34,28 @@
         <li>
             <a href="{{ route("owner.transaction.index") }}" class="side-menu {{ Route::is("owner.transaction.*") ? "side-menu--active" : "" }}">
                 <div class="side-menu__icon"> <i data-feather="inbox"></i> </div>
-                <div class="side-menu__title"> Transaksi </div>
+                <div class="side-menu__title"> Kasir </div>
             </a>
         </li>
         <li>
-            <a href="{{ route("owner.integration.index") }}" class="side-menu {{ Route::is("owner.integration.*") ? "side-menu--active" : "" }}">
+            <a href="javascript:;" class="side-menu {{ Route::is("owner.integration.*") ? "side-menu--active" : "" }}">
                 <div class="side-menu__icon"> <i data-feather="message-square"></i> </div>
-                <div class="side-menu__title"> Integrasi </div>
+                <div class="side-menu__title"> Integrasi <i data-feather="chevron-down" class="side-menu__sub-icon"></i> </div>
             </a>
+            <ul>
+                <li>
+                    <a href="{{ route("owner.integration.index") }}" class="side-menu {{ Route::is("owner.integration.index") ? "side-menu--active" : "" }}">
+                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                        <div class="side-menu__title"> Kerja Sama </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/chatify" class="side-menu">
+                        <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                        <div class="side-menu__title"> Chat </div>
+                    </a>
+                </li>
+            </ul>
         </li>
         <li>
             <a href="{{ route("owner.jadwal.index") }}" class="side-menu {{ Route::is("owner.jadwal.*" ? "side-menu--active" : "") }}">
